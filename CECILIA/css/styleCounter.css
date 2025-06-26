@@ -1,0 +1,42 @@
+.containerCounter {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    width: 700px;
+}
+
+
+.countdown {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 1rem;
+}
+
+.time-box {
+    background: #f9e6ea;
+    color: white;
+    padding: 1rem;
+    border-radius: 10px;
+    font-family: 'Dancing Script', cursive;
+    width: 133px;
+    text-align: center;
+}
+
+.time-box span {
+    display: block;
+    font-size: 4rem;
+    font-weight: bold;
+}
+
+.time-box span:last-child {
+    font-size: 1rem;
+    font-weight: normal;
+}
+
+#message {
+    font-size: 3rem;
+    margin-top: 1.5rem;
+    color: #ff6f61;
+}
