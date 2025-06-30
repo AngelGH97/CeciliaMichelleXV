@@ -1,24 +1,3 @@
-
-    /*const countdown = () => {
-      const fechaEvento = new Date("2025-07-13T18:00:00").getTime();
-      const ahora = new Date().getTime();
-      const distancia = fechaEvento - ahora;
-
-      if (distancia < 0) {
-        document.getElementById("countdown").innerText = "¡Ya comenzó el evento!";
-        return;
-      }
-
-      const dias = Math.floor(distancia / (1000 * 60 * 60 * 24));
-      const horas = Math.floor((distancia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutos = Math.floor((distancia % (1000 * 60 * 60)) / (1000 * 60));
-      const segundos = Math.floor((distancia % (1000 * 60)) / 1000);
-
-      document.getElementById("countdown").innerText = `${dias} Días ${horas} Horas ${minutos} Minutos ${segundos} Segundos`;
-    };
-
-    setInterval(countdown, 1000);*/
-
 const countdownContainer = document.querySelector(
     ".countdown-container"
 );
@@ -109,4 +88,82 @@ function startCountdown(birthday) {
     });
 
     lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+  });
+  
+function appear(index) {
+  anime({
+    targets: `.section:nth-child(${index}) h1`,
+    opacity: [0, 1],
+    duration: anime.random(300, 600),
+    easing: 'easeInOutQuad'
+  })
+}
+
+function disappear() {
+  anime({
+    targets: `h1`,
+    opacity: [1, 0],
+    duration: anime.random(200, 400),
+    easing: 'easeInOutQuad'
+  })
+}
+  
+  let loading = false;
+  let page = 1;
+
+  window.addEventListener('scroll', () => {
+    if (loading) return;
+    const nearBottom = window.innerHeight + window.scrollY >= document.body.offsetHeight - 200;
+    if (nearBottom) {
+      loadMoreSections();
+    }
+  });
+
+  function loadMoreSections() {
+    loading = true;
+    const loader = document.getElementById('loader');
+    loader.style.display = 'block';
+
+    // Simula carga remota con timeout
+    setTimeout(() => {
+      const container = document.getElementById('page-content');
+
+      // Puedes cambiar o añadir las secciones que quieras repetir o nuevas secciones aquí
+      const newSection = document.createElement('section');
+      newSection.className = 'section bg-light';
+      newSection.setAttribute('data-aos', 'fade-up');
+      newSection.innerHTML = `
+        <h2>Sección Extra #${++page}</h2>
+        <p>Contenido cargado dinámicamente al hacer scroll infinito.</p>
+      `;
+
+      container.appendChild(newSection);
+
+      loader.style.display = 'none';
+      loading = false;
+    }, 1500);
+  }
+
+  const masonry_container = document.querySelector('#masonry-gallery-demo');
+window.lightGallery(masonry_container, {
+    selector: '.lg-item',
+    zoomFromOrigin: true,
+    download: true,
+    plugins: [
+        lgZoom,
+        lgAutoplay,
+        lgFullscreen,
+        lgRotate,
+        lgShare,
+        lgThumbnail
+    ],
+});
+
+  lightGallery(document.getElementById('lightgallery'), {
+    selector: 'a',
+    plugins: [lgThumbnail, lgZoom],
+    thumbnail: true,
+    zoom: true,
+    download: false,
+    speed: 500
   });
