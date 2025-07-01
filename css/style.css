@@ -16,12 +16,15 @@ body * {
 body {
   font-family: "Playfair Display", serif;
   font-optical-sizing: auto;
-  background: linear-gradient(to right, #f9e6ea, #fbe4d8);
   width: 100%;
   overflow-x: hidden;
   margin: 0;
   padding: 0;
   height: auto;
+  background: linear-gradient(135deg, #f9e6ea, #fbe4d8, #f7d1c5, #fce2db);
+  background-size: 400% 400%;
+  animation: roseGoldFlow 20s ease infinite;
+  position: relative;
 }
 
 html {
@@ -33,7 +36,7 @@ html {
 }
 
     .hero {
-      background-image: url('../assets/session2/galeria2.jpg');
+      background-image: url('../assets/session2/galeria2.webp');
       background-size: cover;
       background-position: center;
       color: white;
@@ -52,7 +55,7 @@ html {
       padding: 10px 10px;
       transition: opacity 0.5s ease;
       /*margin-bottom: 4rem;
-      background-image: url('../assets/fondosection.jpg');*/
+      background-image: url('../assets/fondosection.webp');*/
     }
 
     .img-fluid {
@@ -67,15 +70,15 @@ html {
     }
 
     .titulo-section{
-        font-size: 70px!important;
-        font-family: "Birthstone", cursive;
+        font-size: 70px;
+        font-family: 'Great Vibes', cursive;
         text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
         color:#d4af37;
     }
 
     .titulo-Hero{
-        font-size: 70px!important;
-        font-family: "Birthstone", cursive;
+        font-size: 127px;
+        font-family: 'Great Vibes', cursive;
         text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
         color:#d4af37;
     }
@@ -213,7 +216,7 @@ html {
     }
 
     .img-sobre {
-      max-width: 20%;
+      max-width: 15%;
     }
 
     .img-galeria{
@@ -279,7 +282,7 @@ html {
     }
     
     .recepcion{
-      background-image: url('../assets/session2/galeria.jpg');
+      background-image: url('../assets/session2/galeria.webp');
     }
 
     .section-mensaje,.section-galeria{
@@ -289,11 +292,18 @@ html {
     .div-decorado2{
         position: absolute;
         top: -23%;
-        left: -1%;
+        left: 50%;
         transform: translateX(-50%);
         width: 100%;
         z-index: 10;
         height: auto;
+    }
+
+   .texto-blanco{
+        color:white;
+        font-family: 'Dancing Script', cursive;
+        font-size: 45px;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
     }
     /* Responsive */
     @media (max-width: 768px) {
@@ -324,6 +334,12 @@ html {
         font-size: 45px;
         text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
     }
+    .texto-blanco{
+        color:white;
+        font-family: 'Dancing Script', cursive;
+        font-size: 45px;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    }
 
   .texto-contador{
         color:#FFA7B5;
@@ -350,28 +366,66 @@ html {
   }
 
   .decoracion-superior {
-      position: absolute;
-      top: -30px;
-      left: 35%;
-      transform: translateX(-50%);
-      width: 30%;
-      z-index: 10;
-      height: auto;
-   } 
+        position: absolute;
+        top: -196px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 42%;
+        z-index: 10;
+        height: auto;
+    }
 
    .lg-item-wide, .lg-item-small {
         flex: 0 0 100%;
       }
 
       .section {
-      padding: 29px 10px;
+      padding: 88px 10px;
       transition: opacity 0.5s ease;
 /*     margin-bottom: 4rem;
-      background-image: url('../assets/fondosection.jpg');*/
+      background-image: url('../assets/fondosection.webp');*/
     }
 
-}
+    .div-decorado2 {
+      position: absolute;
+      top: -31%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 68%;
+      z-index: 10;
+      height: auto;
+   } 
 
+   .titulo-sobres {
+    font-size: 3.5rem;
+    text-align: center;
+    color: #d4af37;
+  }
+
+  .titulo-Papas,.titulo-section {
+    font-size: 100px;
+    font-family: 'Great Vibes', cursive;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    color: #d4af37;
+  }
+  
+  .fecha{
+    color: #FFA7B5;
+    font-family: 'Dancing Script', cursive;
+    font-size: 69px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  }
+
+  .section-fecha {
+    padding: 0px 0px;
+    transition: opacity 0.5s ease;
+  }
+
+  [data-aos^="fade"].aos-animate {
+   opacity: 1;
+   transform: translateZ(0);
+  }
+}
 
 @keyframes aparecerZoom {
     0% {
@@ -388,3 +442,29 @@ html {
     animation: aparecerZoom 1.5s ease-out forwards;
     opacity: 0; /* Oculto antes de que cargue */
     }
+
+  @keyframes roseGoldFlow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  /* Capa de brillitos */
+.sparkle-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background-image: url('../assets/brillos.webp'); /* PNG con brillitos sutiles */
+  background-repeat: repeat;
+  animation: sparkleMove 60s linear infinite;
+  opacity: 0.1;
+  z-index: 1;
+}
+  /* Movimiento de los brillitos */
+@keyframes sparkleMove {
+  0% { background-position: 0 0; }
+  100% { background-position: 1000px 1000px; }
+}
