@@ -69,18 +69,12 @@ html {
     border-radius: 10px;
     }
 
-    .titulo-section{
-        font-size: 70px;
+    .titulo-section,.titulo-Hero{
+        font-size: 100px;
         font-family: 'Great Vibes', cursive;
         text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
         color:#d4af37;
-    }
-
-    .titulo-Hero{
-        font-size: 127px;
-        font-family: 'Great Vibes', cursive;
-        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-        color:#d4af37;
+        text-align: center;
     }
 
     .titulo-Papas{
@@ -216,7 +210,7 @@ html {
     }
 
     .img-sobre {
-      max-width: 15%;
+      max-width: 20%;
     }
 
     .img-galeria{
@@ -227,12 +221,6 @@ html {
   border: 2px solid #d4af37 !important;
 }
 
-
-.titulo-section {
-      font-size: 2.5rem;
-      text-align: center;
-      color: #d4af37;
-    }
     .titulo-sobres {
       font-size: 1.5rem;
       text-align: center;
@@ -420,10 +408,8 @@ html {
     padding: 0px 0px;
     transition: opacity 0.5s ease;
   }
-
-  [data-aos^="fade"].aos-animate {
-   opacity: 1;
-   transform: translateZ(0);
+  .img-sobre {
+      max-width: 15%;
   }
 }
 
