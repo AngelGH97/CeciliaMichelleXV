@@ -62,12 +62,26 @@ function startCountdown(birthday) {
     }, 1000);
 }
 
+window.onload = function () {
+    window.scrollTo(0, 0);
+  };
+  
  window.addEventListener('load', () => {
     const heroSection = document.getElementById('hero');
     if (heroSection) {
       heroSection.scrollIntoView({ behavior: 'smooth' });
     }
   });
+
+  window.addEventListener("load", function () {
+    // Oculta el loader
+    document.getElementById("preloader").style.display = "none";
+    // Muestra el contenido
+    document.getElementById("contenido").style.display = "block";
+    // Reinicia AOS si lo usas
+    AOS.refresh(); 
+  });
+
 
 
   let lastScrollTop = 0;
