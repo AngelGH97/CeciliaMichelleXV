@@ -27,7 +27,7 @@
   <!-- MENSAJE -->
   <section class="section section-beige text-center section-mensaje">
     <div class="container" data-aos="fade-up">
-       <h2 class="texto">Mis XV años son un momento único y especial, el comienzo de una nueva etapa llena de sueños, amor y alegría.</h2>
+       <h2 class="texto pt-5">Mis XV años son un momento único y especial, el comienzo de una nueva etapa llena de sueños, amor y alegría.</h2>
     </div>
   </section>
 
@@ -36,10 +36,9 @@
      <div class="container position-relative">
       <img src="./assets/banner.webp" alt="Decoración" class="div-decorado2">
       <h2 class="mb-4 titulo-Papas" data-aos="fade-up">Mis Padres</h2>
-      <p class="texto">Claudia Cecilia Hernández &</p>
-      <p class="texto">Antonio González.</p>
-      <h2 class="texto">Hoy con el amor de toda mi familia celebró alegremente esta etapa de mi vida, </h2>
-      <h2 class="texto">Será un honor que formes parte de esta historia.</h2>
+      <p class="texto-papas">Claudia Cecilia Hernández</p>
+      <p class="texto-papas">Antonio González.</p>
+      <h2 class="texto">Hoy con el amor de toda mi familia celebro alegremente esta etapa de mi vida, Será un honor que formes parte de esta historia.</h2>
     </div>
   </section>
 
@@ -74,7 +73,7 @@
           <div class="time-box"> <span id="minutes">00</span><div class="texto">Min</div></div>
           <div class="time-box"> <span id="seconds">00</span> <div class="texto">Seg</div></div>
         </div>
-          <h3 class="texto-blanco mb-2 p-2">Cuenta con nosotros el tiempo</h3>
+          <h3 class="texto-blanco mb-2 p-2">Cuenta con nosotros el tiempo!!</h3>
       </div>
     </div>
   </section>
@@ -133,7 +132,17 @@
       <div class="row g-0">
         <div class="col-md-6 p-3 flex-column justify-content-center text-center">
           <h2 class="titulo-section">Recepción</h2>
-          <p class="texto">Grand Emerald Eventos<br>San Nicolás de los Garza, N.L</p>
+          <p class="texto-recepcion">Grand Emerald Eventos</p>
+          <a 
+            href="https://www.google.com/maps?q=25.745559,-100.2606733" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="btn-maps">
+            📍 Ver en Google Maps
+          </a>
+          <a href="geo:25.745559,-100.2606733">
+            <button>Abrir en la App de Mapas</button>
+          </a>
         </div>
         <div class="col-md-6">
           <div class="ratio ratio-4x3"  data-aos="fade-left">
@@ -187,9 +196,7 @@
       once: true
     });
 
-    
-
-    const symbols = ['✦', '✧', '❇', '❈', '✺'];
+    const symbols = ['✧', '❇', '❈', '✺'];
 
     for (let i = 0; i < 50; i++) {
       const sparkle = document.createElement('div');

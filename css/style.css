@@ -66,8 +66,16 @@ html {
     border-radius: 10px;
     }
 
-    .titulo-section,.titulo-Hero{
-        font-size: 95px;
+    .titulo-section{
+        font-size: 72px;
+        font-family: 'Great Vibes', cursive;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        color:#d4af37;
+        text-align: center;
+    }
+
+    .titulo-Hero{
+        font-size: 38px;
         font-family: 'Great Vibes', cursive;
         text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
         color:#d4af37;
@@ -75,10 +83,17 @@ html {
     }
 
     .titulo-Papas{
-        font-size: 50px;
+        font-size: 36px;
        font-family: 'Great Vibes', cursive;
         text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
         color:#d4af37;
+    }
+
+    .texto-recepcion {
+        color: black;
+        font-family: 'Dancing Script', cursive;
+        font-size: 44px;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
     }
 
     .card-reception{
@@ -86,11 +101,18 @@ html {
         border-radius: 15px;
     }
 
-    .texto{
-        color:#FFA7B5;
+    .texto-papas{
+        color:black;
         font-family: 'Dancing Script', cursive;
         font-size: 25px;
         text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    }
+
+    .texto{
+      color: #b76e79;
+        text-shadow: 1px 1px 0 white, -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white;  
+        font-family: 'Dancing Script', cursive;
+        font-size: 25px;
     }
 
     .section-blanca {
@@ -268,7 +290,12 @@ html {
       background-image: url('../assets/session2/galeria.webp');
     }
 
-    .section-mensaje,.section-galeria{
+    .section-mensaje{
+            background-image: url('../assets/fondorosa.webp');
+            height: 21vh;
+    }
+
+     .section-galeria{
             background-image: url('../assets/fondorosa.webp');
     }
 
@@ -283,10 +310,26 @@ html {
     }
 
    .texto-blanco{
-        color:white;
+        color: #b76e79;
         font-family: 'Dancing Script', cursive;
-        font-size: 45px;
-        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        font-size: 35px;
+        text-shadow: 1px 1px 0 white, -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white;
+    }
+
+    .btn-maps {
+      background-color: #34a853; /* Verde de Google Maps */
+      color: white;
+      padding: 15px 25px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn-maps:hover {
+      background-color: #2c8e47;
     }
     /* Responsive */
     @media (max-width: 768px) {
@@ -312,16 +355,23 @@ html {
     }
 
   .texto{
-        color:#FFA7B5;
-        font-family: 'Dancing Script', cursive;
+        color: #b76e79;
+        text-shadow: 1px 1px 0 white, -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white;        font-family: 'Dancing Script', cursive;
         font-size: 45px;
+    }
+
+    .texto-recepcion {
+        color: black;
+        font-family: 'Dancing Script', cursive;
+        font-size: 44px;
         text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
     }
+
     .texto-blanco{
-        color:white;
+        color: #b76e79;
+        text-shadow: 1px 1px 0 white, -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white;
         font-family: 'Dancing Script', cursive;
         font-size: 45px;
-        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
     }
 
   .texto-contador{
@@ -332,7 +382,7 @@ html {
     }
 
     .titulo-Hero{
-        font-size: 200px!important;
+        font-size: 67px!important;
         font-family: "Birthstone", cursive;
         text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
         color:#d4af37;
@@ -386,7 +436,7 @@ html {
   }
 
   .titulo-Papas,.titulo-section {
-    font-size: 160px;
+    font-size: 120px;
     font-family: 'Great Vibes', cursive;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
     color: #d4af37;
@@ -406,6 +456,26 @@ html {
   .img-sobre {
       max-width: 15%;
   }
+
+  .titulo-Hero{
+        font-size: 54px;
+        font-family: 'Great Vibes', cursive;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        color:#d4af37;
+        text-align: center;
+    }
+
+    .texto-papas{
+        color:black;
+        font-family: 'Dancing Script', cursive;
+        font-size: 66px;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    }
+
+    .section-mensaje {
+    background-image: url(../assets/fondorosa.webp);
+    height: 38vh;
+}
 }
 
 @keyframes aparecerZoom {
