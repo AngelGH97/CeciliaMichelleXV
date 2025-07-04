@@ -331,6 +331,13 @@
       height: auto;
       }
 
+
+    .texto-blanco-contador{
+            color: #b76e79;
+            font-family: 'Dancing Script', cursive;
+            font-size: 32px;
+    }
+
     
 
    .texto-blanco{
@@ -420,7 +427,7 @@
         text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
     }
 
-    .texto-blanco{
+    .texto-blanco,.texto-blanco-contador{
         color: #b76e79;
         text-shadow: 1px 1px 0 white, -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white;
         font-family: 'Dancing Script', cursive;
@@ -483,13 +490,13 @@
    } 
 
    .div-decorado3{
-         position: absolute;
-      top: -9%;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 68%;
-      z-index: 10;
-      height: auto;
+        position: absolute;
+        top: -3%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 41%;
+        z-index: 10;
+        height: auto;
     }
 
    .titulo-sobres {

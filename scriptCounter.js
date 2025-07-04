@@ -1,64 +1,45 @@
-const countdownContainer = document.querySelector(
-    ".countdown-container"
-);
-const monthsElement = document.getElementById("months");
 const daysElement = document.getElementById("days");
 const hoursElement = document.getElementById("hours");
 const minutesElement = document.getElementById("minutes");
 const secondsElement = document.getElementById("seconds");
-const messageElement = document.getElementById("message");
-const birthday = "2025-07-13T18:30:00.000Z";
 
-let countdownInterval;
+// 📅 Fecha del evento: 13 de julio 2025, 6:30 PM hora de México
+const targetDate = new Date("2025-07-13T18:30:00-06:00");
 
-startCountdown(birthday);
+function updateCountdown() {
+  const now = new Date();
+  let difference = targetDate - now;
 
-function startCountdown(birthday) {
-    countdownInterval = setInterval(() => {
-        const today = new Date();
-        const currentYear = today.getFullYear();
+  if (difference <= 0) {
+    document.getElementById("countdown").style.display = "none";
+    messageElement.textContent = "🎉 ¡Ya llegó el día!";
+    clearInterval(interval);
+    return;
+  }
 
-        // Set the next birthday date
-        let nextBirthday = new Date(birthday);
-        nextBirthday.setFullYear(currentYear);
+  // Total en segundos
+  const totalSeconds = Math.floor(difference / 1000);
 
-        // If the birthday has already passed this year, set it to next year
-        if (nextBirthday < today) {
-            nextBirthday.setFullYear(currentYear);
-        }
+  // Cálculo exacto
+  const seconds = totalSeconds % 60;
+  const totalMinutes = Math.floor(totalSeconds / 60);
+  const minutes = totalMinutes % 60;
+  const totalHours = Math.floor(totalMinutes / 60);
+  const hours = totalHours % 24;
+  const totalDays = Math.floor(totalHours / 24);
 
-        const timeDifference = nextBirthday - today;
+  // Cálculo aproximado de meses (1 mes = 30.44 días promedio)
+  const months = Math.floor(totalDays / 30.44);
+  const days = Math.floor(totalDays % 30.44);
 
-        if (timeDifference <= 0) {
-            clearInterval(countdownInterval);
-            messageElement.textContent = "HOY ES!!";
-            return;
-        }
-
-        const days = Math.floor(
-            (timeDifference % (1000 * 60 * 60 * 24 * 30)) /
-                (1000 * 60 * 60 * 24)
-        );
-        const hours = Math.floor(
-            (timeDifference % (1000 * 60 * 60 * 24)) /
-                (1000 * 60 * 60)
-        );
-        const minutes = Math.floor(
-            (timeDifference % (1000 * 60 * 60)) / (1000 * 60)
-        );
-        const seconds = Math.floor(
-            (timeDifference % (1000 * 60)) / 1000
-        );
-
-        daysElement.textContent = String(days).padStart(2, "0");
-        hoursElement.textContent = String(hours).padStart(2, "0");
-        minutesElement.textContent = String(minutes).padStart(
-            2,
-            "0"
-        );
-        secondsElement.textContent = String(seconds).padStart(
-            2,
-            "0"
-        );
-    }, 1000);
+  // Mostrar valores
+  daysElement.textContent = String(days).padStart(2, "0");
+  hoursElement.textContent = String(hours).padStart(2, "0");
+  minutesElement.textContent = String(minutes).padStart(2, "0");
+  secondsElement.textContent = String(seconds).padStart(2, "0");
+  console.log("esta entreanadk");
 }
+
+// ⏰ Ejecutar cada segundo
+const interval = setInterval(updateCountdown, 1000);
+updateCountdown(); // Ejecutar de inmediato también
