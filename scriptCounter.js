@@ -7,7 +7,7 @@ const hoursElement = document.getElementById("hours");
 const minutesElement = document.getElementById("minutes");
 const secondsElement = document.getElementById("seconds");
 const messageElement = document.getElementById("message");
-const birthday = "2025-07-13T18:00:00.000Z";
+const birthday = "2025-07-13T18:30:00.000Z";
 
 let countdownInterval;
 
@@ -31,7 +31,7 @@ function startCountdown(birthday) {
 
         if (timeDifference <= 0) {
             clearInterval(countdownInterval);
-            messageElement.textContent = "HOY ES";
+            messageElement.textContent = "HOY ES!!";
             return;
         }
 

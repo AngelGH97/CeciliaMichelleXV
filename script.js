@@ -108,62 +108,23 @@ function disappear() {
   })
 }
   
-  let loading = false;
-  let page = 1;
-
-  window.addEventListener('scroll', () => {
-    if (loading) return;
-    const nearBottom = window.innerHeight + window.scrollY >= document.body.offsetHeight - 200;
-    if (nearBottom) {
-      loadMoreSections();
-    }
-  });
-
-  function loadMoreSections() {
-    loading = true;
-    const loader = document.getElementById('loader');
-    loader.style.display = 'block';
-
-    // Simula carga remota con timeout
-    setTimeout(() => {
-      const container = document.getElementById('page-content');
-
-      // Puedes cambiar o añadir las secciones que quieras repetir o nuevas secciones aquí
-      const newSection = document.createElement('section');
-      newSection.className = 'section bg-light';
-      newSection.setAttribute('data-aos', 'fade-up');
-      newSection.innerHTML = `
-        <h2>Sección Extra #${++page}</h2>
-        <p>Contenido cargado dinámicamente al hacer scroll infinito.</p>
-      `;
-
-      container.appendChild(newSection);
-
-      loader.style.display = 'none';
-      loading = false;
-    }, 1500);
-  }
-
-  const masonry_container = document.querySelector('#masonry-gallery-demo');
-window.lightGallery(masonry_container, {
-    selector: '.lg-item',
-    zoomFromOrigin: true,
-    download: true,
-    plugins: [
-        lgZoom,
-        lgAutoplay,
-        lgFullscreen,
-        lgRotate,
-        lgShare,
-        lgThumbnail
-    ],
-});
-
+document.addEventListener("DOMContentLoaded", function () {
   lightGallery(document.getElementById('lightgallery'), {
     selector: 'a',
     plugins: [lgThumbnail, lgZoom],
     thumbnail: true,
-    zoom: true,
+    zoom: false,
     download: false,
-    speed: 500
+    speed: 500,
+    showThumbByDefault: true,
+    mobileSettings: {
+      controls: true,
+      showCloseIcon: true,
+      download: false,
+      rotate: false,
+      thumbnail: true,
+      showThumbByDefault: true
+    }
   });
+});
+
